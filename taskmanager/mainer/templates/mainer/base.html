@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>KinoHit.kz</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% load static %}
+    <link rel="stylesheet"  href="{% static 'mainer/css/style.css' %}/">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title><% bloc title %><% endblock %></title>
+  {% block style %}
+  {% endblock %}
+  <style>
+        button{
+      margin-right: 2;
+    }
+    .container{
+      padding-right: 50px;
+      padding-left: 50px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    h2{
+      color: white ;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    h5{
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    h5, button{
+      display: inline;
+    }
+    .item{
+      display: block;
+      max-width:auto;
+      height:auto;
+
+    }
+    a{
+        color: white;
+    }
+    .white{
+      color: white;
+    }
+  img{
+    width: 500px;
+    height: 700px;
+    }
+  </style>
+</head>
+<body>
+    <button type="button" class="btn btn-success" style="margin-left: 1200px"><a href="{% url 'registration' %}">LOGIN</a> | <a href="{% url 'registration' %}">REGISTRATION</a></button>
+    <div class="container">
+    <h2>KinoHit.kz</h2>
+    <h5>Choose from here:</h5>
+    <button type="button" class="btn btn-success"><a href="{% url 'project' %}">Home</a></button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> Genre <span class="badge"></span> <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="{% url 'comedy' %}">Comedy</a></li>
+        <li><a href="{% url 'animation' %}">Animation</a></li>
+        <li><a href="{% url 'horror' %}">Horror</a></li>
+        <li><a href="{% url 'action' %}">Action</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Country <span class="badge"></span> <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="{% url 'kz' %}">Kazakhstan</a></li>
+        <li><a href="{% url 'ru' %}">Russia</a></li>
+        <li><a href="{% url 'us' %}">America</a></li>
+        <li><a href="{% url 'ch' %}">China</a></li>
+      </ul>
+    </div>
+  </div>
+    <div class="container">
+    <h2>Recommended <span class="badge"></span></h2>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+    {% block body %}
+{% endblock %}
+{% for el in work %}
+             <h3 align="center" style="color:white;">{{ el.work }}</h3>
+             <h5 align="center" style="color:white;">{{ el.time }}</h5>
+    {% endfor %}
+{% for el in address %}
+             <h3 align="center" style="color:white">{{ el.address }}</h3>
+    {% endfor %}
+  </body>
+</html>

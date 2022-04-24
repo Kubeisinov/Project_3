@@ -1,0 +1,36 @@
+    button{
+      margin-right: 2;
+    }
+    .container{
+      padding-right: 50px;
+      padding-left: 50px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    h2{
+      color: white ;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    h5{
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    h5, button{
+      display: inline;
+    }
+    .item{
+      display: block;
+      max-width:auto;
+      height:auto;
+
+    }
+    a{
+        color: white;
+    }
+    .white{
+      color: white;
+    }
+  img{
+    width: 500px;
+    height: 700px;
+    }

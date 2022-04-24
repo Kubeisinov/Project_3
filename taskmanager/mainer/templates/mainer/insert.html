@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Insert</title>
+</head>
+<body>
+    <div class="features">
+        <h1>Жаңалықтарды енгізу</h1>
+        <form method="post" >
+            {% csrf_token %}
+            {{ form.name }}<br>
+            {{ form.surname }}<br>
+            {{ form.phone_num }}<br>
+            {{ form.email }}<br>
+            {{ form.password }}<br>
+            {{ form.genre }}<br>
+            <span>{{ error }}</span>
+            <button type="submit" class="btn btn-success">Қосу</button>
+        </form>
+    </div>
+</body>
+</html>
